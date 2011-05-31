@@ -51,8 +51,6 @@ class CoffeeQClient
 
       on.message do |channel, message|
         puts "##{channel}: #{message}"
-        puts @queueClient.llen(channel)
-        puts @queueClient.lpop(channel)
         block.call(message)
       end
 
